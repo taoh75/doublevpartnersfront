@@ -1,0 +1,10 @@
+<header class="pb-3 m-4 border-bottom">
+    <div *ngIf="verificarUsuario()" class="float-end">
+        <button class="btn btn-outline-dark" (click)="logout()">Salir</button>
+    </div>
+    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <img src="assets/doublevpartner.png" alt="" width="65px" style="margin:0px 10px;">
+        <span class="fs-4">Double V Partners </span>
+        <small>Coding Challenge</small>
+    </a>
+</header>

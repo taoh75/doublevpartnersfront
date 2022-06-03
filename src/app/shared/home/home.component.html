@@ -1,0 +1,25 @@
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="row">
+        <div *ngIf="isUserLogged==false" class="col-4">
+            <div class="my-2">
+                <div *ngIf="isErrLogin" class="alert alert-danger" role="alert">
+                    Usuario o contraseña incorrectos
+                </div>
+                <b>Ingresar al Sistema</b>
+                <input [(ngModel)]="userHome.loguser" type="text" class="form-control" placeholder="Login de Acceso">
+            </div>
+            <div class="my-2">
+                <input [(ngModel)]="userHome.pass" type="password" class="form-control" placeholder="Contraseña">
+            </div>
+            <div class="my-2">
+                <button class="btn btn-outline-success btn-sm" (click)="loginUser()">
+                    Ingresar
+                </button>
+            </div>
+        </div>
+        <div class="col-8">
+            <h1 class="display-5 fw-bold">Bienvenido</h1>
+            <p class="col-md-8 fs-4">La presente aplicación es un desafío de código para la Empresa Double V Partners</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<h4>Datos Personales</h4>
+<div *ngIf="guardado" class="alert alert-success" role="alert">
+    El registro ha sido guardado con éxito
+</div>
+<div *ngIf="hayerror" class="alert alert-danger" role="alert">
+    Hubo un error al guardar el registro
+</div>
+<div class="row">
+    <div class="col-3 my-1 p-1">
+        <input type="hidden" [(ngModel)]="persona.id">
+        <input required [(ngModel)]="persona.dniType" type="text" class="form-control" placeholder="Tipo">
+    </div>
+    <div class="col-9 my-1 p-1">
+        <input required [(ngModel)]="persona.dni" type="text" class="form-control" placeholder="Identificación">
+    </div>
+    <div class="col-6 my-1 p-1">
+        <input required [(ngModel)]="persona.names" type="text" class="form-control" placeholder="Nombres">
+    </div>
+    <div class="col-6 my-1 p-1">
+        <input required [(ngModel)]="persona.lastNames" type="text" class="form-control" placeholder="Apellidos">
+    </div>
+    <div class="col-6 my-1 p-1">
+        <input required [(ngModel)]="persona.email" type="text" class="form-control" placeholder="Correo Electrónico">
+    </div>
+    <div class="col-6 my-1 p-1">
+        <button type="button" class="btn btn-outline-success btn-sm" (click)="guardar()">
+            Guardar Persona
+        </button>
+        <button *ngIf="persona.id > 0" type="button" class="btn btn-outline-danger btn-sm mx-2" (click)="eliminar()">
+            Eliminar Persona
+        </button>
+        <button type="button" class="btn btn-outline-dark btn-sm mx-2" onclick="window.location.href='/person';">
+            Cerrar
+        </button>
+    </div>
+</div>

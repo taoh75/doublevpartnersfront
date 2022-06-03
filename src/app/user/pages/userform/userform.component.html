@@ -1,0 +1,24 @@
+<h4>Datos del Usuario</h4>
+<hr>
+<div *ngIf="isguardado" class="alert alert-success" role="alert">
+    El registro ha sido guardado con éxito
+</div>
+<div *ngIf="iserror" class="alert alert-danger" role="alert">
+    Hubo un error al guardar el registro
+</div>
+<div class="row my-1">
+    <div class="col-12">
+        <label for="">Usuario</label>
+        <input type="text" [(ngModel)]="usuario.loguser" class="form-control" style="max-width:300px">
+        <input type="hidden" [(ngModel)]="usuario.id">
+    </div>
+    <div class="col-12">
+        <label for="">Contraseña</label>
+        <input type="password" class="form-control" style="max-width:300px" [(ngModel)]="usuario.pass">
+    </div>
+    <div class="col-12 my-4">
+        <button class="btn btn-outline-success btn-sm mx-1" (click)="guardaUsuario()">Guardar</button>
+        <button *ngIf="usuario.id > 0" class="btn btn-outline-danger btn-sm mx-1" (click)="eliminar()">Eliminar</button>
+        <a class="btn btn-outline-dark btn-sm mx-1" routerLink="/user">Cerrar</a>
+    </div>
+</div>

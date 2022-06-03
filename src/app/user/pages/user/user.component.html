@@ -1,0 +1,29 @@
+<div class="float-end">
+    <a type="button" class="btn btn-outline-success btn-sm" routerLink="new">
+        <i class="bi bi-plus-square"></i> Nuevo Usuario
+    </a>
+</div>
+<h4>Usuarios Registrados</h4>
+<hr>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th width="130px">Id</th>
+            <th>Usuario</th>
+            <th width="250px">Creado</th>
+            <th width="130px">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usr of usuarios">
+            <td>{{ usr.id }}</td>
+            <td>{{ usr.loguser }}</td>
+            <td>{{ usr.createdAt }}</td>
+            <td class="text-center">
+                <a class="btn btn-outline-primary btn-sm mx-1" routerLink="{{ usr.id }}">
+                    <i class="bi bi-pencil-square"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

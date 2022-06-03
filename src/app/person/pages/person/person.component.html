@@ -1,0 +1,33 @@
+<div class="float-end">
+    <a class="btn btn-outline-success btn-sm" routerLink="create">
+        <i class="bi bi-plus-square"></i> Nueva Persona
+    </a>
+</div>
+<h3>Personas Registradas</h3>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">Nombre</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Creado</th>
+            <th class="text-center">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let persona of personas">
+            <td>{{ persona.id }}</td>
+            <td>
+                {{ persona.names }} {{ persona.lastNames }}<br>
+                <small>{{ persona.dniType }}{{ persona.dni }}</small>
+            </td>
+            <td>{{ persona.email }}</td>
+            <td>{{ persona.createdAt }}</td>
+            <td class="text-center">
+                <a type="button" class="btn btn-outline-primary btn-sm mx-1" title="Editar Persona" routerLink="{{ persona.id }}">
+                    <i class="bi bi-pencil-square"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
